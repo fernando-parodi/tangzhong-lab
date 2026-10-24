@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#17241f" />
+  <meta name="description" content="Tangzhong Lab: scale a Tangzhong and poolish dough for artisan bread or pizza, with a stage-by-stage method and baking timer." />
+  <title>Tangzhong Lab — One dough, two directions</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  
+  
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+:root{--bg:#f4f1e9;--ink:#17241f;--inksoft:#506058;--muted:#788379;--line:#d9dcd0;--rust:#b86943;--rust-dark:#9d4b2d;--mint:#e1e8da;--cream:#fffdf7;--dark:#17241f;--honey:#edca93;--font-sans:'DM Sans',Arial,sans-serif;--font-serif:'Playfair Display',Georgia,serif;--font-mono:'DM Mono',monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-sans);font-size:15px;-webkit-font-smoothing:antialiased}button,input{font:inherit}button{cursor:pointer}a{color:inherit}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--rust);outline-offset:3px}button:disabled{opacity:.5;cursor:not-allowed}[hidden]{display:none!important}.page-shell{max-width:1600px;margin:auto;overflow:hidden}.masthead{height:91px;display:flex;justify-content:space-between;align-items:center;padding:0 clamp(24px,5.4vw,86px);border-bottom:1px solid #d7dacf}.brand{display:flex;align-items:center;gap:14px;text-decoration:none}.brand-mark{width:44px;height:44px;background:var(--ink);border-radius:8px;display:grid;place-items:center;color:#f3e0b8;font-family:var(--font-serif);font-weight:700;font-size:28px;letter-spacing:-5px;padding-right:8px}.brand-dot{color:var(--rust);margin-left:3px}.brand-text{display:flex;flex-direction:column;font-size:12px;line-height:1.08;font-weight:700;letter-spacing:.2em}.brand-text span{font-weight:500;color:var(--rust);letter-spacing:.37em;margin-top:5px}.header-meta{font:11px var(--font-mono);letter-spacing:.09em;color:#62746a;display:flex;align-items:center;gap:10px}.status-dot,.live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#92a776}.meta-version{color:var(--rust)}.hero{margin:0 clamp(24px,5.4vw,86px);min-height:496px;display:grid;grid-template-columns:1.05fr .85fr;grid-template-rows:1fr auto;border-bottom:1px solid var(--line);position:relative}.hero-copy{z-index:2;padding:74px 0 38px}.eyebrow,.section-kicker,.field-caption,.timer-eyebrow,.science-note span{font:11px var(--font-mono);letter-spacing:.09em;font-weight:500}.eyebrow{display:flex;align-items:center;gap:10px;color:var(--rust-dark)}.eyebrow .line{width:26px;height:1px;background:var(--rust)}.hero h1{font-family:var(--font-serif);font-size:clamp(52px,5.1vw,86px);font-weight:500;line-height:1.04;letter-spacing:-.065em;margin:26px 0 24px}.hero h1 em{font-weight:500;color:var(--rust);white-space:nowrap}.hero-copy p{line-height:1.72;color:#657269;max-width:410px;margin:0 0 26px;font-size:14px}.hero-link{display:inline-flex;gap:25px;font:11px var(--font-mono);letter-spacing:.06em;font-weight:500;text-decoration:none;border-bottom:1px solid var(--ink);padding:0 0 12px}.hero-link span{font-size:17px;line-height:10px}.hero-art{position:relative;min-height:363px;display:flex;align-items:center;justify-content:center;overflow:hidden}.art-disc{position:absolute;border-radius:50%;width:335px;height:335px;top:41px;left:50%;transform:translateX(-50%)}.art-disc-outer{background:repeating-radial-gradient(circle at center,transparent 0,transparent 13px,rgba(82,97,80,.09) 13.4px,transparent 14px);width:435px;height:435px;top:-9px}.art-disc-mid{background:#dfd8c4;box-shadow:inset 0 0 0 19px #e8e5d7,0 16px 32px rgba(68,80,68,.1);border:1px solid #c9c6b5}.art-disc-center{width:236px;height:236px;top:90px;background:radial-gradient(circle at 30% 25%,#f4cc87 0%,#dba565 42%,#b56b3c 80%,#a65e37 100%);box-shadow:inset 0 0 21px rgba(128,67,32,.3),0 10px 30px #8e5a3235;border:9px solid #d6a06b;transform:translateX(-50%) rotate(-18deg);overflow:hidden}.art-disc-center:after{content:'';position:absolute;inset:5px;border:1px solid #f7d39581;border-radius:50%}.bread-score{position:absolute;left:50%;height:86px;width:17px;border-radius:60% 50% 60% 60%;background:#f9e5b6;transform:translateX(-50%) rotate(40deg);box-shadow:2px 2px 2px #a65f37}.score-one{top:-7px;left:21%}.score-two{top:42px;left:42%}.score-three{top:83px;left:66%}.score-four{top:125px;left:89%}.art-label{position:absolute;font:10px/1.6 var(--font-mono);letter-spacing:.11em;color:#9c9e86}.art-label-top{top:54px;right:8px}.art-label-bottom{bottom:39px;left:14px}.hero-formula{grid-column:1/-1;display:flex;gap:56px;align-items:end;padding:13px 0 30px}.hero-formula>div{display:flex;flex-direction:column;gap:7px}.hero-formula small{font:10px var(--font-mono);color:#859186;letter-spacing:.1em}.hero-formula strong{font:600 27px var(--font-serif);letter-spacing:-.05em}.hero-formula sup{font-family:var(--font-sans);font-size:12px;vertical-align:7px;margin-left:3px}.section-intro{display:flex;align-items:end;justify-content:space-between;gap:24px;margin:76px clamp(24px,5.4vw,86px) 28px}.section-kicker{color:var(--rust)}h2,h3,h4,p{margin-top:0}.section-intro h2{font:500 clamp(34px,3.4vw,53px)/1.1 var(--font-serif);letter-spacing:-.048em;margin:12px 0 0}.section-intro>p{max-width:300px;font-size:13px;line-height:1.65;color:#788379;margin:0 0 4px}.workspace{display:grid;grid-template-columns:minmax(300px,.91fr) minmax(400px,1.2fr);gap:20px;margin:0 clamp(24px,5.4vw,86px)}.config-panel,.recipe-panel{border:1px solid #dde0d5;border-radius:12px;background:#f9f8f2;box-shadow:0 9px 26px #24392c08;padding:34px}.panel-header{display:flex;gap:14px;align-items:flex-start;margin-bottom:39px}.panel-index{background:#e8e9dd;font:500 11px var(--font-mono);width:31px;height:31px;display:grid;place-items:center;border-radius:6px;color:#65756a;flex-shrink:0}.panel-header h3{font:600 22px var(--font-serif);letter-spacing:-.035em;margin:0 0 5px}.panel-header p{font-size:12px;color:#9a9d93;margin:0}.field-caption,.field label{font:500 10px var(--font-mono);letter-spacing:.09em;color:#52665a}.mode-picker{display:grid;gap:10px;margin:14px 0 30px}.mode-card{width:100%;display:flex;align-items:center;gap:15px;border:1px solid #e0e1d7;background:#fffef9;text-align:left;padding:17px 19px;border-radius:9px;transition:.2s}.mode-card:hover{border-color:#bccabf}.mode-card.is-active{border-color:#667e6d;background:#e6ebdf;box-shadow:inset 3px 0 var(--ink)}.mode-symbol{height:41px;width:41px;display:grid;place-items:center;background:#f0f0e7;border-radius:8px;font-size:26px;color:#466b53;flex-shrink:0}.mode-card.is-active .mode-symbol{background:#cfdcc8}.mode-card strong,.mode-card small{display:block}.mode-card strong{font-size:14px}.mode-card small{font-size:11px;color:#819084;margin-top:5px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field label{display:block;margin-bottom:11px}.number-control,.unit-input{height:51px;border:1px solid #dddcd3;border-radius:6px;display:flex;background:#fffdf8;overflow:hidden}.number-control button{border:0;background:transparent;min-width:36px;color:#607367;font-size:22px}.number-control button:hover{background:#edf1e9}.number-control input{min-width:0;width:100%;border:0;text-align:center;background:transparent;font:600 18px var(--font-mono);outline:none}.number-control input::-webkit-inner-spin-button,.unit-input input::-webkit-inner-spin-button{-webkit-appearance:none}.unit-input{align-items:center;padding:0 12px}.unit-input input{border:0;outline:none;min-width:0;width:100%;background:transparent;font:600 18px var(--font-mono)}.unit-input span{font:12px var(--font-mono);color:#a1a9a0}.conditional{margin-top:26px}.with-space{margin:21px 0 12px}.choice-group{display:flex;flex-wrap:wrap;gap:8px}.pill{border:1px solid #d9ddd3;background:#fffef9;color:#6d7b70;border-radius:5px;padding:10px 11px;font-size:11px}.pill.is-selected{background:#203b2b;border-color:#203b2b;color:#fff}.advice{display:flex;gap:12px;background:#ecede3;border-radius:7px;padding:16px;margin-top:30px}.advice-icon{font-size:19px;line-height:1;color:var(--rust)}.advice p{margin:0;color:#68786a;font-size:12px;line-height:1.6}.advice strong{color:#304739}.reset-link,.clear-link{padding:0;background:none;border:0;font:10px var(--font-mono);letter-spacing:.05em;color:#788d7c;margin-top:28px;text-decoration:underline;text-underline-offset:4px}.reset-link:hover,.clear-link:hover{color:var(--rust)}.recipe-panel{background:#fffef9}.recipe-head{position:relative;margin-bottom:30px}.recipe-head .icon-button{margin-left:auto}.icon-button{background:transparent;border:1px solid #d8dcd4;border-radius:5px;font:10px var(--font-mono);padding:10px;color:#445d4d;white-space:nowrap}.icon-button:hover{background:#f0f3ec}.yield-strip{display:grid;grid-template-columns:1.1fr .9fr .9fr;background:#1d3026;color:#fff;border-radius:9px;padding:21px 20px;margin-bottom:27px}.yield-strip>div{padding:0 16px;border-right:1px solid #455b4c}.yield-strip>div:first-child{padding-left:0}.yield-strip>div:last-child{border:0}.yield-strip span{display:block;font:9px var(--font-mono);color:#9eafa2;letter-spacing:.06em;margin-bottom:8px}.yield-strip strong{font:500 clamp(20px,2.1vw,29px) var(--font-serif);letter-spacing:-.035em;white-space:nowrap}.ingredient-section{padding:0 0 17px;margin:0 0 23px;border-bottom:1px solid #e7e9e1}.ingredient-section.last-section{margin-bottom:0;border-bottom:0;padding-bottom:0}.ingredient-head{display:flex;align-items:center;gap:14px;margin-bottom:12px}.group-index{font:11px var(--font-mono);color:var(--rust);width:22px}.ingredient-head h4{font:600 17px var(--font-serif);margin:0;letter-spacing:-.02em}.ingredient-head h4 small{font:11px var(--font-sans);color:#a7ada4;letter-spacing:0;margin-left:6px}.ingredient-row{display:grid;grid-template-columns:1fr 105px 55px;gap:10px;padding:7px 0 7px 36px;align-items:center}.ingredient-row>span:first-child{font-size:12px;color:#617168}.ingredient-row strong{text-align:right;font:500 13px var(--font-mono);white-space:nowrap}.ingredient-row small{text-align:right;font:10px var(--font-mono);color:#a5b0a5}.ingredient-row.included{grid-template-columns:1fr auto;border-top:1px dashed #e1e6dc;margin-top:10px;padding-top:13px}.ingredient-row.included span:last-child{font:10px var(--font-mono);color:#9da99f}.formula-footer{border-top:1px solid #e7e9e1;padding-top:20px;margin-top:24px;display:flex;align-items:center;justify-content:space-between;gap:12px}.formula-footer>span{font:10px/1.5 var(--font-mono);color:#8d978e;max-width:300px}.formula-footer button{font:10px var(--font-mono);border:0;background:none;color:var(--rust-dark);white-space:nowrap}.tiny-circle{display:inline-block;width:6px;height:6px;background:#b9c9b7;border-radius:50%;margin-right:5px}.method-section{margin-top:20px;padding-top:8px}.section-intro-method{margin-top:93px}.method-grid{display:grid;grid-template-columns:minmax(265px,.62fr) minmax(420px,1.42fr);gap:20px;margin:0 clamp(24px,5.4vw,86px)}.timer-panel{background:#1c3026;border-radius:10px;padding:30px;color:#fff;align-self:start;position:sticky;top:20px}.timer-eyebrow{color:#a4bb9c;display:flex;justify-content:space-between}.timer-digits{font:500 clamp(48px,5vw,70px)/1.2 var(--font-mono);letter-spacing:-.08em;margin-top:37px;font-variant-numeric:tabular-nums}.timer-label{color:#a5baa8;font-size:12px;margin:6px 0 30px}.timer-controls{display:flex;gap:10px}.timer-primary{flex:1;border:0;background:#e8d5ac;color:#1e3127;font:500 11px var(--font-mono);letter-spacing:.03em;padding:15px 12px;border-radius:5px;display:flex;justify-content:space-between}.timer-primary:hover{background:#f4e2b7}.timer-secondary{width:51px;border:1px solid #53675a;border-radius:5px;color:#fff;background:none;font-size:22px}.timer-secondary:hover{background:#344b3a}.timer-note{color:#8fa596;line-height:1.6;font-size:11px;min-height:39px;margin:16px 0}.timer-divider{height:1px;background:#4b5d50;margin:28px 0}.progress-top{display:flex;justify-content:space-between;font:10px var(--font-mono);letter-spacing:.05em;color:#c8d3c7}.progress-track{height:5px;border-radius:8px;background:#4a6150;margin-top:15px;overflow:hidden}.progress-track>div{width:0;height:100%;background:#e1cb9b;transition:width .2s}.aside-note{font-size:11px;line-height:1.65;color:#8fa595;margin-top:18px}.clear-link{color:#c9d6c9;margin-top:8px}.steps{border:1px solid #dfe2d8;border-radius:10px;background:#fffef9;overflow:hidden}.step{display:grid;grid-template-columns:32px 1fr auto;gap:17px;padding:23px 27px;border-bottom:1px solid #e7e9e1;align-items:start}.step:last-child{border-bottom:0}.step-check{height:27px;width:27px;background:#fff;border:1px solid #bdc9bd;border-radius:50%;color:#fff;display:grid;place-items:center;line-height:1;font-size:15px;padding:0}.step-check:hover{border-color:var(--rust)}.step.is-done .step-check{background:#31543c;border-color:#31543c}.step.is-done h3{text-decoration:line-through;color:#879486}.step.is-done p{opacity:.7}.step-phase{font:9px var(--font-mono);letter-spacing:.05em;color:var(--rust);margin:1px 0 7px;text-transform:uppercase}.step h3{font:600 20px var(--font-serif);margin:0 0 8px;letter-spacing:-.025em}.step p{font-size:12px;line-height:1.72;color:#788579;margin:0;max-width:510px}.step-side{display:flex;flex-direction:column;align-items:flex-end;gap:9px;min-width:128px}.step-duration{font:10px var(--font-mono);color:#7a8c7c;white-space:nowrap}.step-timer{padding:5px 0;background:none;border:0;border-bottom:1px solid #c6d0c5;font:10px var(--font-mono);color:#365543;white-space:nowrap}.step-timer:hover{color:var(--rust)}.science-note{display:grid;grid-template-columns:48px 1fr 132px;gap:26px;margin:97px clamp(24px,5.4vw,86px) 80px;background:#e1e9df;border-radius:11px;padding:38px 47px;align-items:start}.science-icon{font-size:36px;color:var(--rust);line-height:1}.science-note span{color:#66816f}.science-note h3{font:500 31px var(--font-serif);letter-spacing:-.035em;margin:10px 0}.science-note p{font-size:13px;line-height:1.75;color:#718376;margin:0;max-width:660px}.science-formula{font:500 65px/1 var(--font-serif);letter-spacing:-.04em;color:#375641}.science-formula>span{font-size:19px;font-family:var(--font-sans)}.science-formula small{display:block;font:10px/1.5 var(--font-mono);letter-spacing:.05em;margin-top:13px}.footer{border-top:1px solid #d9dfd6;padding:33px clamp(24px,5.4vw,86px);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;font:10px var(--font-mono);letter-spacing:.04em;color:#8a998d}.footer a{text-decoration:none;color:#556d5a}.toast{position:fixed;bottom:26px;left:50%;transform:translate(-50%,20px);padding:12px 22px;background:#17241f;color:white;border-radius:6px;font:12px var(--font-mono);opacity:0;pointer-events:none;transition:.25s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:1050px){.hero{grid-template-columns:1fr .7fr}.art-disc-outer{width:370px;height:370px;top:19px}.art-disc-mid{width:290px;height:290px;top:59px}.art-disc-center{width:208px;height:208px;top:100px}.hero h1{font-size:clamp(49px,5.3vw,68px)}.workspace{grid-template-columns:.85fr 1.15fr}.config-panel,.recipe-panel{padding:25px}.ingredient-row{grid-template-columns:1fr 76px 45px;padding-left:26px}.ingredient-head h4 small{display:block;margin:5px 0 0}.yield-strip{padding:18px 10px}.yield-strip>div{padding:0 10px}.method-grid{grid-template-columns:280px 1fr}.step{grid-template-columns:28px 1fr;gap:11px}.step-side{grid-column:2;flex-direction:row;align-items:center;min-width:0;justify-content:space-between;width:100%;margin-top:6px}.science-note{grid-template-columns:30px 1fr 90px;padding:28px}.science-formula{font-size:48px}}
+@media(max-width:760px){.masthead{height:77px}.hero{grid-template-columns:1fr;grid-template-rows:auto 210px auto}.hero-copy{padding:62px 0 12px}.hero h1{font-size:clamp(48px,9vw,71px)}.hero-art{min-height:210px;max-width:410px;margin:auto;width:100%}.art-disc-outer{width:280px;height:280px;top:-36px}.art-disc-mid{width:225px;height:225px;top:-9px}.art-disc-center{width:161px;height:161px;top:23px;border-width:6px}.bread-score{height:55px;width:10px}.score-two{top:28px}.score-three{top:60px}.score-four{top:92px}.art-label-top{top:16px}.art-label-bottom{bottom:12px}.hero-formula{gap:28px;padding-bottom:30px;justify-content:space-between}.hero-formula strong{font-size:23px}.hero-formula small{font-size:9px}.section-intro{margin-top:56px;align-items:start;flex-direction:column;gap:14px}.section-intro>p{max-width:470px}.workspace,.method-grid{grid-template-columns:1fr}.config-panel,.recipe-panel{padding:27px}.mode-picker{grid-template-columns:1fr 1fr;gap:8px}.mode-card{padding:12px;gap:10px}.mode-card .mode-symbol{width:31px;height:31px;font-size:20px}.mode-card strong{font-size:12px}.mode-card small{font-size:10px}.timer-panel{position:static}.method-grid{gap:16px}.timer-digits{font-size:65px;margin-top:14px}.science-note{margin:65px 24px 50px;grid-template-columns:30px 1fr}.science-formula{display:none}.footer{align-items:start;flex-direction:column}}
+@media(max-width:430px){.masthead{padding:0 20px}.header-meta{font-size:9px}.brand-mark{width:36px;height:36px;font-size:22px}.brand-text{font-size:10px}.hero,.workspace,.method-grid{margin-left:17px;margin-right:17px}.section-intro{margin-left:17px;margin-right:17px}.hero-copy{padding-top:48px}.hero h1{font-size:47px}.hero-formula{gap:10px}.hero-formula small{font-size:8px}.hero-formula strong{font-size:20px}.config-panel,.recipe-panel{padding:19px}.field-grid{gap:11px}.number-control{height:48px}.yield-strip{padding:17px 8px}.yield-strip>div{padding:0 6px}.yield-strip strong{font-size:19px}.ingredient-row{grid-template-columns:1fr 68px 38px;gap:4px;padding-left:20px}.ingredient-row strong{font-size:11px}.step{padding:20px 16px}.step h3{font-size:18px}.science-note{margin-left:17px;margin-right:17px;padding:22px;gap:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+@media print{*{box-shadow:none!important}body{background:#fff;font-size:11px}.masthead,.hero,.section-intro>p,.config-panel,.method-grid aside,.icon-button,.formula-footer button,.step-timer,.step-check,.science-note,.footer,.toast,.reset-link{display:none!important}.section-intro{margin:12px 0}.workspace,.method-grid{display:block;margin:0}.recipe-panel,.steps{border:0;padding:0}.recipe-panel{max-width:100%}.yield-strip{background:#eee!important;color:#000!important;print-color-adjust:exact}.yield-strip span{color:#444}.ingredient-section{padding-bottom:5px;margin-bottom:8px}.ingredient-row{padding:3px 0 3px 36px}.method-section,.section-intro-method{margin:10px 0}.step{padding:6px 0;grid-template-columns:1fr;break-inside:avoid}.step-side{display:none}.step h3{font-size:14px;margin-bottom:4px}.step p{font-size:10px}.section-intro h2{font-size:22px}.science-note{display:none}.panel-header{margin-bottom:12px}.ingredient-head{margin-bottom:4px}.recipe-panel,.steps{break-inside:auto}}
+
+</style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="masthead">
+      <a class="brand" href="#top" aria-label="Tangzhong Lab home">
+        <span class="brand-mark" aria-hidden="true">T<span class="brand-dot">.</span></span>
+        <span class="brand-text">TANGZHONG<span>LAB</span></span>
+      </a>
+      <div class="header-meta"><span class="status-dot"></span> DOUGH ENGINE <span class="meta-version">/ 01</span></div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="line"></span> FORMULA · FERMENTATION · FLOUR</div>
+          <h1 id="hero-title">One dough.<br /><em>Two directions.</em></h1>
+          <p>Artisan bread or a seriously good pizza. One Tangzhong–Poolish formula, precisely scaled and adapted to the way you bake.</p>
+          <a class="hero-link" href="#workbench">OPEN THE WORKBENCH <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-disc art-disc-outer"></div><div class="art-disc art-disc-mid"></div>
+          <div class="art-disc art-disc-center"><div class="bread-score score-one"></div><div class="bread-score score-two"></div><div class="bread-score score-three"></div><div class="bread-score score-four"></div></div>
+          <span class="art-label art-label-top">STARCH<br />+ TIME</span>
+          <span class="art-label art-label-bottom">EST. 2026<br />FORMULA 001</span>
+        </div>
+        <div class="hero-formula">
+          <div><small>HYDRATION</small><strong>71.5<sup>%</sup></strong></div>
+          <div><small>TANGZHONG FLOUR</small><strong>15<sup>%</sup></strong></div>
+          <div><small>POOLISH FLOUR</small><strong>20<sup>%</sup></strong></div>
+        </div>
+      </section>
+
+      <div class="section-intro" id="workbench">
+        <div><span class="section-kicker">01 / THE WORKBENCH</span><h2>Build your dough.</h2></div>
+        <p>Choose the bake, set your yield, and let the baker’s math handle the rest.</p>
+      </div>
+
+      <section class="workspace" aria-label="Dough calculator">
+        <div class="config-panel">
+          <div class="panel-header"><span class="panel-index">A</span><div><h3>Your bake</h3><p>Make it yours.</p></div></div>
+          <div class="field-caption">WHAT ARE WE MAKING?</div>
+          <div class="mode-picker" role="group" aria-label="Recipe mode">
+            <button id="mode-bread" class="mode-card is-active" type="button" aria-pressed="true"><span class="mode-symbol" aria-hidden="true">◒</span><span><strong>Artisan bread</strong><small>Crackling crust · tender crumb</small></span></button>
+            <button id="mode-pizza" class="mode-card" type="button" aria-pressed="false"><span class="mode-symbol" aria-hidden="true">◉</span><span><strong>Pizza</strong><small>Airy dough · crispy bottom</small></span></button>
+          </div>
+          <div class="field-grid">
+            <div class="field"><label for="count" id="count-label">NUMBER OF LOAVES</label><div class="number-control"><button id="count-minus" type="button" aria-label="Decrease quantity">−</button><input id="count" type="number" min="1" max="40" step="1" value="1" inputmode="numeric" /><button id="count-plus" type="button" aria-label="Increase quantity">+</button></div></div>
+            <div class="field"><label for="piece-weight" id="weight-label">DOUGH / LOAF</label><div class="unit-input"><input id="piece-weight" type="number" min="100" max="2000" step="1" value="697" inputmode="numeric" /><span>g</span></div></div>
+          </div>
+          <div class="conditional" id="pizza-settings" hidden>
+            <div class="field-caption with-space">FERMENTATION ROUTE</div>
+            <div class="choice-group" role="group" aria-label="Fermentation route"><button id="route-same-day" class="pill is-selected" type="button" aria-pressed="true">Same-day</button><button id="route-overnight" class="pill" type="button" aria-pressed="false">Overnight · 12–24h</button></div>
+            <div class="field-caption with-space">PIZZA SHAPE</div>
+            <div class="choice-group" role="group" aria-label="Pizza shape"><button id="style-round" class="pill is-selected" type="button" aria-pressed="true">Round · stone / steel</button><button id="style-pan" class="pill" type="button" aria-pressed="false">Pan · oiled tray</button></div>
+          </div>
+          <div id="recipe-tip" class="advice" role="note"><span class="advice-icon">✳</span><p>The original 697 g loaf is reproduced exactly at <strong>1 loaf × 697 g</strong>.</p></div>
+          <button class="reset-link" id="reset-recipe" type="button">↺ Reset to original recipe</button>
+        </div>
+
+        <div class="recipe-panel">
+          <div class="panel-header recipe-head"><span class="panel-index">B</span><div><h3>The formula</h3><p>Live ingredient weights · baker's percentages</p></div><button class="icon-button" id="copy-recipe" type="button" title="Copy ingredients" aria-label="Copy ingredients">COPY ↗</button></div>
+          <div class="yield-strip"><div><span>YOUR YIELD</span><strong id="total-weight">697 g</strong></div><div><span>FLOUR</span><strong id="total-flour">400 g</strong></div><div><span>WATER</span><strong id="total-water">286 g</strong></div></div>
+          <div class="ingredient-section">
+            <div class="ingredient-head"><span class="group-index">01</span><h4>Tangzhong <small>heated flour paste</small></h4></div>
+            <div class="ingredient-row"><span>Bread flour</span><strong id="tz-flour"></strong><small>15%</small></div>
+            <div class="ingredient-row"><span>Boiling water</span><strong id="tz-water"></strong><small>30%</small></div>
+          </div>
+          <div class="ingredient-section">
+            <div class="ingredient-head"><span class="group-index">02</span><h4>Poolish <small>preferment</small></h4></div>
+            <div class="ingredient-row"><span>Bread flour</span><strong id="pool-flour"></strong><small>20%</small></div>
+            <div class="ingredient-row"><span>Water</span><strong id="pool-water"></strong><small>20%</small></div>
+            <div class="ingredient-row"><span>Instant yeast</span><strong id="pool-yeast"></strong><small>0.20%</small></div>
+          </div>
+          <div class="ingredient-section last-section">
+            <div class="ingredient-head"><span class="group-index">03</span><h4>Final dough <small>combine everything</small></h4></div>
+            <div class="ingredient-row"><span>Bread flour</span><strong id="final-flour"></strong><small>65%</small></div>
+            <div class="ingredient-row"><span>Ice-cold water</span><strong id="final-water"></strong><small>21.5%</small></div>
+            <div class="ingredient-row"><span>Instant yeast</span><strong id="final-yeast"></strong><small id="final-yeast-pct">0.80%</small></div>
+            <div class="ingredient-row"><span>Salt</span><strong id="final-salt"></strong><small>1.75%</small></div>
+            <div class="ingredient-row included"><span>All of the poolish + tangzhong</span><span>included above</span></div>
+          </div>
+          <div class="formula-footer"><span><i class="tiny-circle"></i> 71.5% actual hydration (rounded to 72% in the source recipe)</span><button type="button" id="print-recipe">PRINT RECIPE ↗</button></div>
+        </div>
+      </section>
+
+      <section class="method-section" aria-label="Step-by-step baking method">
+        <div class="section-intro section-intro-method"><div><span class="section-kicker">02 / THE METHOD</span><h2 id="method-title">From flour to loaf.</h2></div><p id="method-intro">A simple cold-bulk process. Track each stage as you go.</p></div>
+        <div class="method-grid">
+          <aside class="timer-panel">
+            <div class="timer-eyebrow">BENCH TIMER <span class="live-dot"></span></div>
+            <div class="timer-digits" id="timer-display" role="timer" aria-live="off">30:00</div>
+            <p class="timer-label" id="timer-label">First cold rest</p>
+            <div class="timer-controls"><button class="timer-primary" id="timer-start" type="button">START TIMER <span aria-hidden="true">▶</span></button><button class="timer-secondary" id="timer-reset" type="button" aria-label="Reset timer">↺</button></div>
+            <p id="timer-note" class="timer-note" role="status">Select a step's timer to change the duration.</p>
+            <div class="timer-divider"></div>
+            <div class="progress-top"><span>BAKE PROGRESS</span><span id="progress-count">0 / 11</span></div>
+            <div class="progress-track" role="progressbar" id="progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Recipe progress"><div id="progress-fill"></div></div>
+            <p class="aside-note">Check steps off as you work. Progress is saved locally in this browser.</p>
+            <button id="clear-progress" class="clear-link" type="button">CLEAR CHECKMARKS ↗</button>
+          </aside>
+          <div class="steps" id="steps" aria-label="Recipe steps"></div>
+        </div>
+      </section>
+
+      <section class="science-note"><div class="science-icon">✳</div><div><span>BEHIND THE DOUGH</span><h3>Why tangzhong?</h3><p>Hot-water starch gelatinization holds on to extra moisture, contributing to a softer, longer-lasting crumb. Poolish adds aroma and flavour through prefermentation. Pizza mode adapts the shaping and bake to that same flour–water architecture.</p></div><div class="science-formula">15<span>%</span><small>FLOUR IN<br />TANGZHONG</small></div></section>
+    </main>
+    <footer class="footer"><span>TANGZHONG LAB © 2026</span><span>CRAFTED FROM A 400 G FLOUR FORMULA · <a href="https://github.com/fernando-parodi" target="_blank" rel="noopener noreferrer">@FERNANDO-PARODI ↗</a></span><span>RECIPE ENGINE / V1.0</span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>
+/**
+ * Tangzhong Lab — dependency-free recipe mathematics.
+ * All quantities use grams. Flour is the 100% baker's-percentage reference.
+ * The source recipe yields 697 g: flour 400 + water 286 + salt 7 + yeast 4.
+ */
+const BASE = Object.freeze({
+  flour: 400,
+  water: 286,
+  salt: 7,
+  poolishYeast: 0.8,
+  finalYeast: 3.2,
+  tangzhongFlourPct: 0.15,
+  tangzhongWaterPct: 0.30,
+  poolishFlourPct: 0.20,
+  poolishWaterPct: 0.20,
+  finalFlourPct: 0.65,
+  finalWaterPct: 0.215,
+  saltPct: 0.0175,
+  poolishYeastPct: 0.002,
+  finalYeastPct: 0.008,
+});
+
+const PROFILES = Object.freeze({
+  bread: { label: 'Artisan bread', yeastAdjustment: 'original' },
+  pizzaSameDay: { label: 'Pizza · same-day', yeastAdjustment: 'original' },
+  pizzaOvernight: { label: 'Pizza · overnight', yeastAdjustment: 'no-final-yeast' },
+});
+
+function validPositive(n, min, max) {
+  return Number.isFinite(n) && n >= min && n <= max;
+}
+
+function calculateRecipe({ mode = 'bread', profile = 'same-day', count = 1, pieceWeight = 697 } = {}) {
+  const n = Number(count);
+  const grams = Number(pieceWeight);
+  if (!validPositive(n, 1, 40) || !Number.isInteger(n)) throw new RangeError('Number of pieces must be a whole number from 1 to 40.');
+  if (!validPositive(grams, 100, 2000)) throw new RangeError('Piece weight must be 100–2,000 g.');
+  if (!['bread', 'pizza'].includes(mode)) throw new RangeError('Unknown recipe mode.');
+  if (!['same-day', 'overnight'].includes(profile)) throw new RangeError('Unknown fermentation profile.');
+
+  const overnight = mode === 'pizza' && profile === 'overnight';
+  const poolishYeastPct = BASE.poolishYeastPct;
+  const finalYeastPct = overnight ? 0 : BASE.finalYeastPct;
+  const yeastPct = poolishYeastPct + finalYeastPct;
+  const flour = (n * grams) / (1 + BASE.water / BASE.flour + BASE.saltPct + yeastPct);
+  const parts = {
+    tangzhong: { flour: flour * BASE.tangzhongFlourPct, water: flour * BASE.tangzhongWaterPct },
+    poolish: { flour: flour * BASE.poolishFlourPct, water: flour * BASE.poolishWaterPct, yeast: flour * poolishYeastPct },
+    final: { flour: flour * BASE.finalFlourPct, water: flour * BASE.finalWaterPct, yeast: flour * finalYeastPct, salt: flour * BASE.saltPct },
+  };
+  const totalWater = parts.tangzhong.water + parts.poolish.water + parts.final.water;
+  const totalYeast = parts.poolish.yeast + parts.final.yeast;
+  const totalDough = flour + totalWater + parts.final.salt + totalYeast;
+  return {
+    mode, profile: overnight ? 'overnight' : 'same-day', count: n, pieceWeight: grams,
+    totalDough, flour, water: totalWater, yeast: totalYeast,
+    salt: parts.final.salt, hydrationPct: (totalWater / flour) * 100,
+    yeastPct: yeastPct * 100, parts,
+  };
+}
+
+function formatGrams(n) {
+  if (!Number.isFinite(n)) return '—';
+  if (Math.abs(n) < 10 && n !== 0) return `${Number(n.toFixed(2)).toLocaleString('en-US', { maximumFractionDigits: 2 })} g`;
+  return `${Number(n.toFixed(1)).toLocaleString('en-US', { maximumFractionDigits: 1 })} g`;
+}
+
+function formatNumber(n) {
+  return Number(n.toFixed(1)).toLocaleString('en-US', { maximumFractionDigits: 1 });
+}
+
+function getMethod({ mode = 'bread', profile = 'same-day', pizzaStyle = 'round' } = {}) {
+  const base = [
+    {
+      id: 'poolish', phase: 'Preparation', title: 'Activate the poolish', duration: '3–4 hr (variable)', minutes: 210,
+      body: 'Combine the poolish flour and instant yeast, then mix in the measured water. Cover and ferment until visibly bubbly, domed, and just starting to recede. Watch the dough, not only the clock.'
+    },
+    {
+      id: 'tangzhong', phase: 'Preparation', title: 'Make the tangzhong', duration: '10 min + cooling', minutes: 10,
+      body: 'Pour boiling water into a heatproof bowl. Immediately add the tangzhong flour and stir thoroughly into a thick paste, leaving no dry flour. Cover, cool completely and refrigerate while the poolish ferments.'
+    },
+    {
+      id: 'mix', phase: 'Mixing', title: 'Mix the final dough', duration: '10–15 min', minutes: 12,
+      body: 'In a large bowl, combine ice-cold final-dough water and salt. Break up all the cooled tangzhong in this mixture. Stir in the poolish. Add final-dough yeast if listed, then the remaining flour. Mix by hand until uniform; full gluten development is not needed yet.'
+    },
+    {
+      id: 'fold1', phase: 'Cold bulk', title: 'Rest, then fold × 8', duration: '30 min rest', minutes: 30,
+      body: 'Cover and refrigerate for 30 minutes. Wet your hands, then stretch one edge of the dough and fold it over itself. Rotate the bowl and repeat eight times. Cover and return to the fridge.'
+    },
+    {
+      id: 'fold2', phase: 'Cold bulk', title: 'Fold × 4 and round', duration: '30 min rest', minutes: 30,
+      body: 'After another 30 minutes in the fridge, make four stretch-and-folds. Turn the dough over, gently round it to smooth the surface and cover again.'
+    },
+    {
+      id: 'bulk', phase: 'Cold bulk', title: 'Finish the cold bulk', duration: '60 min', minutes: 60,
+      body: 'Refrigerate for one further hour. Total cold bulk after mixing is about two hours. Allow the dough to gain strength; shorten or extend the schedule if fermentation develops unusually fast or slowly.'
+    },
+  ];
+
+  if (mode === 'bread') {
+    return [...base,
+      { id: 'shape', phase: 'Shaping', title: 'Shape a batard', duration: '10–15 min', minutes: 12,
+        body: 'Lightly flour the surface. Divide first if making multiple loaves. Fold bottom up, sides inward and top down; stitch and roll snugly into an oval. Pinch the ends shut. If tight, allow a 5–10-minute bench rest.' },
+      { id: 'proof', phase: 'Final proof', title: 'Proof in the refrigerator', duration: '≈ 60 min', minutes: 60,
+        body: 'Transfer seam-up to a rice-flour-dusted banneton. Cover and chill for approximately one hour. Proofing is temperature-sensitive: adjust based on visible expansion and dough feel.' },
+      { id: 'preheat', phase: 'Baking', title: 'Preheat and score', duration: 'Preheat thoroughly', minutes: 40,
+        body: 'Preheat oven and Dutch oven to 240°C. Tip each cold loaf seam-down onto baking parchment. Score one long shallow-angled slash to encourage an ear.' },
+      { id: 'bake1', phase: 'Baking', title: 'Bake covered', duration: '20 min · 230°C', minutes: 20,
+        body: 'Place the loaf in the hot Dutch oven and, if safe for your cookware, add a small ice cube beside the dough. Cover and bake at 230°C for 20 minutes (top/bottom heat).' },
+      { id: 'bake2', phase: 'Baking', title: 'Finish uncovered', duration: '10–15 min · 200°C', minutes: 13,
+        body: 'Remove the lid, reduce to about 200°C and use the fan if available. Bake 10–15 more minutes until deep golden. Cool on a rack before slicing; ideally at least one hour.' },
+    ];
+  }
+
+  // Pizza is a deliberate adaptation of the bread dough, not quoted from the source method.
+  const commonPizza = [
+    { id: 'divide', phase: 'Shaping', title: 'Divide and ball', duration: '10 min', minutes: 10,
+      body: 'Turn out the dough, divide into the selected number of equal portions and round each into a taut ball. Use a lightly oiled covered container to prevent drying.' },
+  ];
+  const sameDay = [
+    { id: 'relax', phase: 'Final proof', title: 'Let the dough relax', duration: '≈ 1–2 hr', minutes: 90,
+      body: 'Allow covered dough balls to relax and become slightly puffy at room temperature before shaping. Start checking early in a hot kitchen; 1% total yeast is an active same-day formula.' },
+  ];
+  const overnight = [
+    { id: 'overnight', phase: 'Cold proof', title: 'Cold-ferment the dough balls', duration: '12–24 hr', minutes: 720,
+      body: 'Cover the dough balls and refrigerate at about 3–5°C for 12–24 hours. This variation retains poolish yeast but removes final-dough yeast; monitor the actual expansion, especially in a warm climate.' },
+    { id: 'temper', phase: 'Final proof', title: 'Warm until extensible', duration: '≈ 1–2 hr', minutes: 90,
+      body: 'Let covered dough balls come toward room temperature until stretchable and lightly puffy. In a warm kitchen, this may take substantially less time.' },
+  ];
+  const finishRound = [
+    { id: 'pizzaheat', phase: 'Baking', title: 'Heat a stone or steel', duration: '45–60 min preheat', minutes: 50,
+      body: 'Set the oven to its highest suitable temperature (ideally 260–300°C, or your oven maximum). Preheat the baking stone or steel thoroughly. Higher hydration makes the dough delicate: dust gently and transfer promptly.' },
+    { id: 'stretch', phase: 'Baking', title: 'Stretch, top and bake', duration: '≈ 6–10 min', minutes: 8,
+      body: 'With floured fingertips, press from the centre outward while preserving a rim; stretch each ball into a round. Add light toppings. Transfer to the very hot surface and bake until the rim is risen and browned and the base is crisp; actual time depends on oven heat.' },
+  ];
+  const finishPan = [
+    { id: 'panheat', phase: 'Baking', title: 'Oil a tray and preheat', duration: '30–45 min preheat', minutes: 40,
+      body: 'Generously oil a metal pizza tray. Heat the oven to 240–260°C or its highest suitable setting. This soft, high-hydration dough is especially well suited to a crisp-bottomed pan pizza.' },
+    { id: 'press', phase: 'Baking', title: 'Press, top and bake', duration: '≈ 10–16 min', minutes: 13,
+      body: 'Ease a relaxed dough ball into the tray, press toward the edges without crushing the rim and rest briefly if it springs back. Add moderate toppings. Bake on a low rack until the underside crisps and the top is well browned.' },
+  ];
+  return [...base, ...commonPizza, ...(profile === 'overnight' ? overnight : sameDay), ...(pizzaStyle === 'pan' ? finishPan : finishRound)];
+}
+
+
+const STORAGE_KEY = 'tangzhong-lab-v1';
+const defaults = {
+  mode: 'bread',
+  bread: { count: 1, pieceWeight: 697 },
+  pizza: { count: 3, pieceWeight: 260, profile: 'same-day', style: 'round' },
+  completed: {},
+};
+
+function loadState() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+    if (!saved || typeof saved !== 'object') return structuredClone(defaults);
+    const result = structuredClone(defaults);
+    result.mode = saved.mode === 'pizza' ? 'pizza' : 'bread';
+    for (const mode of ['bread', 'pizza']) {
+      const input = saved[mode] || {};
+      if (Number.isInteger(input.count) && input.count >= 1 && input.count <= 40) result[mode].count = input.count;
+      if (Number.isFinite(input.pieceWeight) && input.pieceWeight >= 100 && input.pieceWeight <= 2000) result[mode].pieceWeight = input.pieceWeight;
+    }
+    result.pizza.profile = saved.pizza?.profile === 'overnight' ? 'overnight' : 'same-day';
+    result.pizza.style = saved.pizza?.style === 'pan' ? 'pan' : 'round';
+    result.completed = saved.completed && typeof saved.completed === 'object' ? saved.completed : {};
+    return result;
+  } catch { return structuredClone(defaults); }
+}
+let state = loadState();
+const $ = id => document.getElementById(id);
+let timer = { seconds: 1800, initialSeconds: 1800, deadline: 0, running: false, stage: 'First cold rest' };
+let toastTimeout = null;
+
+function save() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch { /* app works without persistence */ }
+}
+function notify(message) {
+  $('toast').textContent = message;
+  $('toast').classList.add('show');
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => $('toast').classList.remove('show'), 3000);
+}
+function currentProfile() { return state.mode === 'pizza' ? state.pizza.profile : 'same-day'; }
+function progressKey() { return `${state.mode}:${currentProfile()}:${state.mode === 'pizza' ? state.pizza.style : 'batard'}`; }
+function getModel() {
+  const config = state[state.mode];
+  return calculateRecipe({ mode: state.mode, profile: currentProfile(), count: config.count, pieceWeight: config.pieceWeight });
+}
+function applyActive(buttonId, active) {
+  $(buttonId).classList.toggle('is-active', active);
+  $(buttonId).setAttribute('aria-pressed', String(active));
+}
+function applySelected(buttonId, active) {
+  $(buttonId).classList.toggle('is-selected', active);
+  $(buttonId).setAttribute('aria-pressed', String(active));
+}
+function syncInputs() {
+  const config = state[state.mode];
+  $('count').value = config.count;
+  $('piece-weight').value = config.pieceWeight;
+  $('count-label').textContent = state.mode === 'pizza' ? 'NUMBER OF PIZZAS' : 'NUMBER OF LOAVES';
+  $('weight-label').textContent = state.mode === 'pizza' ? 'DOUGH / PIZZA' : 'DOUGH / LOAF';
+  $('pizza-settings').hidden = state.mode !== 'pizza';
+  applyActive('mode-bread', state.mode === 'bread');
+  applyActive('mode-pizza', state.mode === 'pizza');
+  applySelected('route-same-day', state.pizza.profile === 'same-day');
+  applySelected('route-overnight', state.pizza.profile === 'overnight');
+  applySelected('style-round', state.pizza.style === 'round');
+  applySelected('style-pan', state.pizza.style === 'pan');
+  $('recipe-tip').innerHTML = state.mode === 'bread'
+    ? '<span class="advice-icon">✳</span><p>The original 697 g loaf is reproduced exactly at <strong>1 loaf × 697 g</strong>.</p>'
+    : state.pizza.profile === 'overnight'
+      ? '<span class="advice-icon">✳</span><p><strong>Overnight adaptation:</strong> poolish yeast stays at 0.20% of total flour; final-dough yeast becomes 0%. Refrigerate promptly and monitor fermentation.</p>'
+      : '<span class="advice-icon">✳</span><p><strong>Pizza adaptation:</strong> the same 1% total yeast as the bread formula. Let balls relax fully before stretching; in a warm kitchen, watch for fast proofing.</p>';
+}
+function writeRecipe(model) {
+  const map = {
+    'tz-flour': model.parts.tangzhong.flour,
+    'tz-water': model.parts.tangzhong.water,
+    'pool-flour': model.parts.poolish.flour,
+    'pool-water': model.parts.poolish.water,
+    'pool-yeast': model.parts.poolish.yeast,
+    'final-flour': model.parts.final.flour,
+    'final-water': model.parts.final.water,
+    'final-yeast': model.parts.final.yeast,
+    'final-salt': model.parts.final.salt,
+    'total-weight': model.totalDough,
+    'total-flour': model.flour,
+    'total-water': model.water,
+  };
+  for (const [id, amount] of Object.entries(map)) $(id).textContent = formatGrams(amount);
+  $('final-yeast-pct').textContent = `${model.profile === 'overnight' ? '0' : '0.80'}%`;
+}
+function getSteps() { return getMethod({ mode: state.mode, profile: currentProfile(), pizzaStyle: state.pizza.style }); }
+function renderSteps() {
+  const steps = getSteps();
+  const completed = state.completed[progressKey()] || [];
+  $('method-title').textContent = state.mode === 'bread' ? 'From flour to loaf.' : 'From flour to pizza.';
+  $('method-intro').textContent = state.mode === 'bread'
+    ? 'The original cold-bulk method, with checkpoints and a built-in timer.'
+    : 'Adapted pizza instructions using the same tangzhong–poolish dough.';
+  $('steps').innerHTML = steps.map((step, index) => `
+    <article class="step ${completed.includes(step.id) ? 'is-done' : ''}" data-step="${step.id}">
+      <button class="step-check" type="button" aria-label="${completed.includes(step.id) ? 'Mark incomplete' : 'Mark complete'}: ${step.title}" aria-pressed="${completed.includes(step.id)}" data-check="${step.id}">${completed.includes(step.id) ? '✓' : ''}</button>
+      <div class="step-body"><div class="step-phase">${String(index + 1).padStart(2, '0')} · ${step.phase}</div><h3>${step.title}</h3><p>${step.body}</p></div>
+      <div class="step-side"><span class="step-duration">${step.duration}</span><button class="step-timer" type="button" data-time="${step.id}" aria-label="Set timer for ${step.title}">SET TIMER ↗</button></div>
+    </article>`).join('');
+  $('steps').querySelectorAll('[data-check]').forEach(button => button.addEventListener('click', () => {
+    const key = progressKey();
+    const set = new Set(state.completed[key] || []);
+    set.has(button.dataset.check) ? set.delete(button.dataset.check) : set.add(button.dataset.check);
+    state.completed[key] = [...set];
+    save(); renderSteps();
+  }));
+  $('steps').querySelectorAll('[data-time]').forEach(button => button.addEventListener('click', () => {
+    const step = steps.find(item => item.id === button.dataset.time);
+    setTimer(step.minutes, step.title);
+    notify(`Timer set: ${step.duration}`);
+  }));
+  updateProgress();
+}
+function updateProgress() {
+  const steps = getSteps();
+  const set = new Set(state.completed[progressKey()] || []);
+  const count = steps.filter(step => set.has(step.id)).length;
+  const pct = Math.round((count / steps.length) * 100);
+  $('progress-count').textContent = `${count} / ${steps.length}`;
+  $('progress-fill').style.width = `${pct}%`;
+  $('progress-bar').setAttribute('aria-valuenow', String(pct));
+}
+function renderAll({ rebuildSteps = true } = {}) {
+  syncInputs();
+  writeRecipe(getModel());
+  if (rebuildSteps) renderSteps();
+  save();
+}
+function setMode(mode) {
+  if (state.mode === mode) return;
+  state.mode = mode;
+  setTimer(30, 'First cold rest');
+  renderAll();
+}
+function updateAmount(field, rawValue, final = false) {
+  let value = Number(rawValue);
+  const [min, max] = field === 'count' ? [1, 40] : [100, 2000];
+  if (!Number.isFinite(value) || rawValue === '') {
+    if (final) renderAll({ rebuildSteps: false });
+    return;
+  }
+  if (final) value = Math.min(max, Math.max(min, Math.round(value)));
+  if (!Number.isInteger(value) || value < min || value > max) {
+    if (final) renderAll({ rebuildSteps: false });
+    return;
+  }
+  state[state.mode][field] = value;
+  writeRecipe(getModel()); save();
+  if (final) renderAll({ rebuildSteps: false });
+}
+function formatTime(seconds) {
+  const s = Math.max(0, Math.floor(seconds));
+  const hours = Math.floor(s / 3600);
+  const minutes = Math.floor((s % 3600) / 60);
+  const secs = s % 60;
+  return hours ? `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
+    : `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+}
+function renderTimer() {
+  $('timer-display').textContent = formatTime(timer.seconds);
+  $('timer-label').textContent = timer.stage;
+  $('timer-start').innerHTML = timer.running ? 'PAUSE TIMER <span aria-hidden="true">Ⅱ</span>' : 'START TIMER <span aria-hidden="true">▶</span>';
+}
+function setTimer(minutes, label) {
+  timer = { seconds: Math.max(1, Math.round(minutes * 60)), initialSeconds: Math.max(1, Math.round(minutes * 60)), deadline: 0, running: false, stage: label };
+  $('timer-note').textContent = 'Use Start to count down. Times are guides; watch the dough.';
+  renderTimer();
+}
+function tick() {
+  if (!timer.running) return;
+  timer.seconds = Math.max(0, Math.ceil((timer.deadline - Date.now()) / 1000));
+  if (!timer.seconds) {
+    timer.running = false;
+    $('timer-note').textContent = 'Time is up. Check your dough before moving on.';
+    notify('Timer finished — check your dough!');
+  }
+  renderTimer();
+}
+function pauseOrPlay() {
+  if (timer.running) {
+    timer.seconds = Math.max(0, Math.ceil((timer.deadline - Date.now()) / 1000));
+    timer.running = false;
+  } else {
+    if (timer.seconds <= 0) timer.seconds = timer.initialSeconds;
+    timer.deadline = Date.now() + timer.seconds * 1000;
+    timer.running = true;
+  }
+  renderTimer();
+}
+function resetTimer() {
+  timer.running = false;
+  timer.seconds = timer.initialSeconds;
+  $('timer-note').textContent = 'Timer reset. Select any recipe step for a new duration.';
+  renderTimer();
+}
+function recipeText() {
+  const recipe = getModel();
+  const steps = getSteps();
+  const rows = [
+    `TANGZHONG LAB — ${state.mode === 'bread' ? 'ARTISAN BREAD' : 'PIZZA'} (${state.mode === 'pizza' ? currentProfile() : 'original'})`,
+    `${recipe.count} × ${formatGrams(recipe.pieceWeight)} | total dough ${formatGrams(recipe.totalDough)} | hydration 71.5%`,
+    '',
+    'TANGZHONG',
+    `Bread flour: ${formatGrams(recipe.parts.tangzhong.flour)}`,
+    `Boiling water: ${formatGrams(recipe.parts.tangzhong.water)}`,
+    '',
+    'POOLISH',
+    `Bread flour: ${formatGrams(recipe.parts.poolish.flour)}`,
+    `Water: ${formatGrams(recipe.parts.poolish.water)}`,
+    `Instant yeast: ${formatGrams(recipe.parts.poolish.yeast)}`,
+    '',
+    'FINAL DOUGH',
+    `Bread flour: ${formatGrams(recipe.parts.final.flour)}`,
+    `Ice-cold water: ${formatGrams(recipe.parts.final.water)}`,
+    `Instant yeast: ${formatGrams(recipe.parts.final.yeast)}`,
+    `Salt: ${formatGrams(recipe.parts.final.salt)}`,
+    'All of the poolish and tangzhong',
+    '',
+    'METHOD',
+    ...steps.map((s,i) => `${i+1}. ${s.title} (${s.duration})\n${s.body}`),
+    '',
+    'Formula from the 400 g flour Tangzhong–Poolish bread recipe. Pizza process is an adaptation.',
+  ];
+  return rows.join('\n');
+}
+async function copyText(text) {
+  try {
+    if (!navigator.clipboard?.writeText) throw new Error('No clipboard API');
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const area = document.createElement('textarea');
+    area.value = text; area.style.position = 'fixed'; area.style.left = '-9999px';
+    document.body.appendChild(area); area.select();
+    const okay = document.execCommand('copy'); area.remove();
+    if (!okay) throw new Error('Copy failed');
+  }
+}
+function init() {
+  $('mode-bread').addEventListener('click', () => setMode('bread'));
+  $('mode-pizza').addEventListener('click', () => setMode('pizza'));
+  $('count-minus').addEventListener('click', () => { state[state.mode].count = Math.max(1, state[state.mode].count - 1); renderAll({ rebuildSteps: false }); });
+  $('count-plus').addEventListener('click', () => { state[state.mode].count = Math.min(40, state[state.mode].count + 1); renderAll({ rebuildSteps: false }); });
+  for (const [id, field] of [['count', 'count'], ['piece-weight', 'pieceWeight']]) {
+    $(id).addEventListener('input', e => updateAmount(field, e.target.value));
+    $(id).addEventListener('change', e => updateAmount(field, e.target.value, true));
+  }
+  for (const [id, profile] of [['route-same-day','same-day'], ['route-overnight','overnight']]) $(id).addEventListener('click', () => {state.pizza.profile = profile;renderAll();});
+  for (const [id, style] of [['style-round','round'], ['style-pan','pan']]) $(id).addEventListener('click', () => {state.pizza.style = style;renderAll();});
+  $('reset-recipe').addEventListener('click', () => {state = structuredClone(defaults);setTimer(30, 'First cold rest');renderAll();notify('Original bread formula restored.');});
+  $('timer-start').addEventListener('click', pauseOrPlay);
+  $('timer-reset').addEventListener('click', resetTimer);
+  $('clear-progress').addEventListener('click', () => {state.completed[progressKey()] = [];renderAll();notify('Checkmarks cleared.');});
+  $('copy-recipe').addEventListener('click', async () => {
+    try { await copyText(recipeText()); notify('Full ingredients and method copied.'); }
+    catch { notify('Copy unavailable. Use Print Recipe instead.'); }
+  });
+  $('print-recipe').addEventListener('click', () => window.print());
+  setInterval(tick, 500);
+  document.addEventListener('visibilitychange', tick);
+  renderAll();renderTimer();
+}
+init();
+
+</script>
+</body>
+</html>
