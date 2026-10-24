@@ -1,114 +1,124 @@
-# Tangzhong Lab 🍞 🍕
+# Tangzhong Lab
 
-**One dough. Two directions.** A small, polished, zero-build web app that scales a Tangzhong–Poolish formula for artisan bread or pizza and guides you through the steps.
+**One dough. Two directions.** An interactive, browser-based calculator for artisan bread and pizza built around a Tangzhong–Poolish dough formula.
 
-Created as an introductory GitHub project by [@fernando-parodi](https://github.com/fernando-parodi).
+**[Launch the web app](https://fernando-parodi.github.io/tangzhong-lab/)** · [Source code](https://github.com/fernando-parodi/tangzhong-lab)
 
-## What it does
+Tangzhong Lab combines precise ingredient scaling with guided preparation methods. It is a lightweight static application: no account, backend, build step, or third-party JavaScript framework is required.
 
-- **Bread mode** follows the original cold-bulk batard + Dutch oven process.
-- **Pizza mode** adapts the same flour and water architecture for round or pan pizza, with same-day or overnight fermentation options.
-- **Live scaling** calculates precise ingredient amounts from a quantity and dough weight per piece.
-- **Step checklist and bench timer** keep the process organized. Checkmarks and settings are saved locally in the browser.
-- **Copy or print** the complete, scaled recipe.
-- **Responsive, static design.** No dependencies, build tools, server, user accounts, or API keys needed. Uses system-font fallbacks if the optional Google Fonts stylesheet is unavailable.
+## Features
 
-## Run locally
+- **Bread and pizza workflows** — Batard loaves baked in a Dutch oven, or round and pan-style pizza.
+- **Weight-based scaling** — Choose the number of loaves or pizza balls and the target weight per piece.
+- **Baker's percentages** — Flour, water, salt, and yeast are recalculated from the requested yield.
+- **Separated preferments** — Distinct ingredient lists for Tangzhong, Poolish, and final dough.
+- **Fermentation options** — Reference bread process, same-day pizza, and a reduced-yeast overnight pizza adaptation.
+- **Guided method** — Step-by-step instructions, progress checkboxes, and a countdown timer.
+- **Local persistence** — Preferences and progress are saved in the browser, without an external account.
+- **Print and copy** — Generate a practical batch sheet from the current selections.
 
-For an immediate offline-friendly preview, double-click **`preview.html`**. It is a single-file demo with the same app code and CSS bundled inline. The maintainable source lives in `index.html`, `styles.css`, `recipe.js`, and `app.js`.
+## Reference formula
 
-To run the modular source (`index.html`) locally, serve the project directory:
+The bread baseline yields **697 g of dough**, using **400 g total bread flour** and **286 g total water**.
+
+| Stage | Ingredient | Baker's % | Baseline |
+|---|---|---:|---:|
+| Tangzhong | Bread flour | 15% | 60 g |
+| Tangzhong | Boiling water | 30% | 120 g |
+| Poolish | Bread flour | 20% | 80 g |
+| Poolish | Water | 20% | 80 g |
+| Poolish | Instant yeast | 0.20% | 0.8 g |
+| Final dough | Bread flour | 65% | 260 g |
+| Final dough | Cold water | 21.50% | 86 g |
+| Final dough | Instant yeast | 0.80% | 3.2 g |
+| Final dough | Salt | 1.75% | 7 g |
+| **Total** | **Flour** | **100%** | **400 g** |
+| **Total** | **Water** | **71.50%** | **286 g** |
+| **Total** | **Instant yeast** | **1.00%** | **4 g** |
+| **Total** | **Salt** | **1.75%** | **7 g** |
+| **Total** | **Dough** | **174.25%** | **697 g** |
+
+The source bread formula rounds hydration to 72%; the calculator uses the exact value **71.5%** (286 ÷ 400). Flour and water incorporated into Tangzhong and Poolish are **included** in the overall totals.
+
+### Calculation model
+
+Let **D** be the target total dough mass and **F** the required total flour mass. Baker's percentages are defined relative to **F**.
+
+```text
+F = D / (1 + hydration + salt_fraction + yeast_fraction)
+
+Reference bread / same-day pizza:
+F = D / (1 + 0.715 + 0.0175 + 0.0100)
+  = D / 1.7425
+
+Reduced-yeast overnight pizza:
+F = D / (1 + 0.715 + 0.0175 + 0.0020)
+  = D / 1.7345
+```
+
+Each ingredient is computed from unrounded flour mass, then formatted for display. Because ingredient weights are rounded independently on screen, their displayed sum can differ slightly from the target batch weight.
+
+## Baking workflows
+
+### Artisan bread
+
+The reference method uses a Poolish fermented until its peak, a hot-water Tangzhong paste, ice-cold mixing water, and a short refrigerated bulk fermentation with two rounds of folds. The dough is shaped as a batard, cold-proofed, and baked in a preheated Dutch oven.
+
+### Pizza
+
+Pizza mode is a **practical adaptation** of the bread formula, not a transcription of the original bread process. It retains the Tangzhong and Poolish proportions but changes the dough handling, proofing, shaping, and baking instructions.
+
+- **Same-day:** Retains 1.00% total instant yeast.
+- **Overnight:** Uses 0.20% instant yeast in the Poolish and omits final-dough yeast.
+
+The resulting dough has relatively high hydration; pan pizza can be easier to handle than a free-form round. Fermentation duration depends on dough temperature, flour strength, yeast activity, and refrigerator performance. Use visual dough development alongside the estimated timings. Take care with preheated cookware and steam.
+
+## Architecture
+
+The application separates recipe math, presentation, and UI state:
+
+| File | Purpose |
+|---|---|
+| `index.html` | Semantic HTML entry point for GitHub Pages |
+| `styles.css` | Responsive styles and print formatting |
+| `recipe.js` | Formula scaling and preparation-method data |
+| `app.js` | User interactions, timer, and browser-local persistence |
+| `preview.html` | Self-contained HTML distribution for opening directly |
+| `tests/recipe.test.mjs` | Automated recipe and workflow checks |
+| `favicon.svg` | Project icon |
+| `package.json` | Project metadata and test command |
+| `.nojekyll` | Static hosting configuration |
+
+The project is served directly from the `main` branch through GitHub Pages.
+
+## Local development
+
+The standalone `preview.html` file can be opened directly in a browser.
+
+For the modular source, serve the repository directory with any static HTTP server, for example:
 
 ```bash
 python -m http.server 8000
 ```
 
-Then visit <http://localhost:8000>.
+Open `http://localhost:8000`.
 
-## Put it on GitHub Pages
-
-1. Create a public repository named **`tangzhong-lab`**.
-2. Upload all the project files to the **root** of the `main` branch (not the containing directory).
-3. In the repository, open **Settings → Pages → Build and deployment**.
-4. Choose **Deploy from a branch**, select **`main`**, folder **`/(root)`**, and save.
-5. Your site will be accessible at `https://fernando-parodi.github.io/tangzhong-lab/` after GitHub publishes it.
-
-Official deployment instructions: <https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site>
-
-If you prefer the command line:
+Run the automated checks with Node.js 18 or newer:
 
 ```bash
-git init
-git add .
-git commit -m "Launch Tangzhong Lab v1.0"
-git branch -M main
-git remote add origin https://github.com/fernando-parodi/tangzhong-lab.git
-git push -u origin main
+npm test
 ```
 
-Create the GitHub repository first; don't initialize it with another README if using those commands.
+No `npm install` is necessary; the tests use Node's built-in test runner.
 
-## Original formula and recipe math
+## Possible extensions
 
-The input recipe is **400 g total flour**, **286 g water**, **4 g instant yeast**, and **7 g salt** → **697 g dough**.
-
-The source writes **72% hydration** as a rounded value. Actual hydration is **286 / 400 = 71.5%**. Tangzhong and poolish flour/water are *included* in those totals, not extra.
-
-| Ingredient | % of total flour | Bread baseline |
-|---|---:|---:|
-| Tangzhong flour | 15% | 60 g |
-| Tangzhong boiling water | 30% | 120 g |
-| Poolish flour | 20% | 80 g |
-| Poolish water | 20% | 80 g |
-| Poolish instant yeast | 0.2% | 0.8 g |
-| Final dough flour | 65% | 260 g |
-| Final dough cold water | 21.5% | 86 g |
-| Final dough instant yeast | 0.8% | 3.2 g |
-| Salt | 1.75% | 7 g |
-
-The calculator solves for flour **F** from the requested dough weight **D**, so rounding never compounds across batches:
-
-- Bread / same-day pizza: `F = D / (1 + 0.715 + 0.0175 + 0.01)` = `D / 1.7425`
-- Overnight pizza: `F = D / (1 + 0.715 + 0.0175 + 0.002)` = `D / 1.7345`
-- Individual ingredient amount = `F × baker's percentage`.
-
-Displayed gram values are rounded; slight differences in summed display values can occur.
-
-## Bread versus pizza: what is original and what is adapted?
-
-The **bread mode** comes from the supplied method (poolish, tangzhong, ice-water mix, two-hour refrigerated bulk with folds, batard shaping, one-hour refrigerated proof, and covered/uncovered Dutch-oven bake).
-
-**Pizza mode is an adaptation**, not a claim that the supplied bread recipe originally included pizza. It uses the same tangzhong, poolish, overall flour and hydration ratios, but changes shaping, final proof, and baking. It is designed as a soft, high-hydration pizza, and is particularly well suited to oiled pans.
-
-For same-day pizza, the original 1% total yeast is retained. For overnight pizza, the 0.20% poolish yeast is retained while the 0.80% final-dough yeast is omitted, reducing the total to 0.20%. Dough still ferments at different speeds based on temperature, yeast activity, refrigerator performance, and flour. The oven and fermentation times are starting points, not guarantees. Practice food and hot cookware safety, and use any optional steam/ice technique only when suitable for the cookware.
-
-## Files
-
-```text
-index.html           User interface, semantic markup
-preview.html         Standalone double-clickable app (bundled build)
-styles.css           Responsive design and print styling
-recipe.js            Pure recipe calculations + method data
-app.js               User interaction, timer, local persistence
-favicon.svg          Original typographic mark
-.nojekyll             GitHub Pages static-site hint
-README.md            Documentation and publishing instructions
-LICENSE              MIT license for this app's code
- tests/recipe.test.mjs  Formula/unit tests
-```
-
-## Testing
-
-```bash
-node --test tests/*.test.mjs
-```
-
-Requires Node.js 18+ for local tests; visiting the webpage requires no Node.js.
-
-## Roadmap
-
-Potential next releases: Celsius/Fahrenheit toggle, recipe presets, saved batches, guided step notifications, shopping lists, and ingredient cost estimates.
+Dough-temperature planning, editable hydration, flour presets, fermentation scheduling, saved batches, and ingredient cost estimation.
 
 ## License
 
-Code is released under the [MIT License](LICENSE). Your personal adjustments to the recipe and the suggested pizza workflow may need to be validated for your flour, oven, and climate.
+The application source code is available under the [MIT License](LICENSE).
+
+---
+
+**Tangzhong Lab** · [Live app](https://fernando-parodi.github.io/tangzhong-lab/) · [Fernando Parodi](https://github.com/fernando-parodi)
