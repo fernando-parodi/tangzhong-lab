@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<title id="title">Tangzhong Lab — One dough, two directions</title>
+<desc id="desc">A branded visual with the artisan bread and pizza modes alongside the reference formula, 697 grams of dough, 400 grams of flour, and 71.5 percent hydration.</desc>
+<defs>
+ <linearGradient id="bread" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#F4C982"/><stop offset="1" stop-color="#C27948"/></linearGradient>
+ <linearGradient id="paper" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#F8F6EF"/><stop offset="1" stop-color="#F1EEE5"/></linearGradient>
+ <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#192A22" flood-opacity=".12"/></filter>
+</defs>
+<rect width="1200" height="620" rx="28" fill="url(#paper)"/>
+<rect width="1200" height="620" rx="28" fill="none" stroke="#D9D9CD" stroke-width="2"/>
+<rect x="54" y="40" width="50" height="50" rx="11" fill="#172820"/>
+<text x="78" y="75" text-anchor="middle" font-size="30" fill="#FAF0D8" font-family="Georgia,serif" font-weight="bold">T</text>
+<text x="123" y="58" fill="#182B22" font-family="Arial,sans-serif" font-weight="bold" font-size="16" letter-spacing="5">TANGZHONG</text>
+<text x="123" y="82" fill="#BC7047" font-family="Arial,sans-serif" font-size="15" letter-spacing="8">LAB</text>
+<text x="1000" y="65" fill="#708277" font-family="monospace" font-size="15" letter-spacing="2">DOUGH ENGINE / 01</text>
+<path d="M54 111 H1146" stroke="#D9D9CD" stroke-width="2"/>
+<text x="60" y="168" fill="#B86B42" font-family="monospace" font-size="15" letter-spacing="3">FORMULA  ·  FERMENTATION  ·  FLOUR</text>
+<text x="54" y="263" fill="#15271F" font-family="Georgia,serif" font-size="78" letter-spacing="-3">One dough.</text>
+<text x="54" y="358" fill="#BE7049" font-family="Georgia,serif" font-style="italic" font-size="78" letter-spacing="-3">Two directions.</text>
+<text x="59" y="417" fill="#687870" font-family="Arial,sans-serif" font-size="23">Precisely scaled Tangzhong + Poolish</text>
+<text x="59" y="452" fill="#687870" font-family="Arial,sans-serif" font-size="23">for artisan bread or pizza.</text>
+<rect x="60" y="491" width="210" height="53" rx="12" fill="#18352A"/>
+<text x="165" y="524" text-anchor="middle" fill="#F8F5ED" font-family="Arial,sans-serif" font-size="19" font-weight="bold">ARTISAN BREAD</text>
+<rect x="280" y="491" width="130" height="53" rx="12" fill="#E7E9DE" stroke="#BAC4B6"/>
+<text x="345" y="524" text-anchor="middle" fill="#264236" font-family="Arial,sans-serif" font-size="19" font-weight="bold">PIZZA</text>
+<circle cx="926" cy="308" r="237" fill="none" stroke="#E1DFD4" stroke-width="1.8"/>
+<circle cx="926" cy="308" r="208" fill="#ECE9DB" stroke="#D1CBBB" stroke-width="3"/>
+<circle cx="926" cy="308" r="174" fill="#DEDCC9"/>
+<g filter="url(#shadow)">
+<circle cx="926" cy="308" r="139" fill="url(#bread)" stroke="#D99864" stroke-width="10"/>
+<circle cx="926" cy="308" r="125" fill="none" stroke="#EACB94" stroke-width="2" opacity=".6"/>
+<path d="M862 242 Q881 223 880 185 Q847 211 851 260 Q859 263 862 242 Z" fill="#FFF1C6"/>
+<path d="M923 292 Q943 266 953 223 Q921 238 903 298 Q909 309 923 292 Z" fill="#FFF1C6"/>
+<path d="M980 359 Q1004 329 1010 288 Q982 302 964 357 Q967 373 980 359 Z" fill="#FFF1C6"/>
+<path d="M1032 385 Q1058 360 1069 322 Q1038 329 1021 384 Q1022 399 1032 385 Z" fill="#FFF1C6"/>
+</g>
+<g transform="translate(682 428)" filter="url(#shadow)">
+ <rect x="0" y="0" width="461" height="125" rx="16" fill="#1D372B"/>
+ <text x="24" y="31" fill="#B5C2B4" font-family="monospace" font-size="13" letter-spacing="1.5">REFERENCE FORMULA</text>
+ <text x="25" y="79" fill="#FFFFFF" font-family="Georgia,serif" font-size="38">697 g</text>
+ <text x="25" y="103" fill="#C8D3CA" font-family="Arial,sans-serif" font-size="14">TOTAL DOUGH</text>
+ <path d="M169 18 V106 M314 18 V106" stroke="#4C6556"/>
+ <text x="190" y="79" fill="#FFFFFF" font-family="Georgia,serif" font-size="37">400 g</text>
+ <text x="190" y="103" fill="#C8D3CA" font-family="Arial,sans-serif" font-size="14">FLOUR</text>
+ <text x="332" y="79" fill="#FFFFFF" font-family="Georgia,serif" font-size="37">71.5%</text>
+ <text x="332" y="103" fill="#C8D3CA" font-family="Arial,sans-serif" font-size="14">HYDRATION</text>
+</g>
+</svg>
