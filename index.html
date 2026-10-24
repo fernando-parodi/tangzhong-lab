@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#17241f" />
+  <meta name="description" content="Tangzhong Lab: scale a Tangzhong and poolish dough for artisan bread or pizza, with a stage-by-stage method and baking timer." />
+  <title>Tangzhong Lab — One dough, two directions</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="masthead">
+      <a class="brand" href="#top" aria-label="Tangzhong Lab home">
+        <span class="brand-mark" aria-hidden="true">T<span class="brand-dot">.</span></span>
+        <span class="brand-text">TANGZHONG<span>LAB</span></span>
+      </a>
+      <div class="header-meta"><span class="status-dot"></span> DOUGH ENGINE <span class="meta-version">/ 01</span></div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="line"></span> FORMULA · FERMENTATION · FLOUR</div>
+          <h1 id="hero-title">One dough.<br /><em>Two directions.</em></h1>
+          <p>Artisan bread or a seriously good pizza. One Tangzhong–Poolish formula, precisely scaled and adapted to the way you bake.</p>
+          <a class="hero-link" href="#workbench">OPEN THE WORKBENCH <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-disc art-disc-outer"></div><div class="art-disc art-disc-mid"></div>
+          <div class="art-disc art-disc-center"><div class="bread-score score-one"></div><div class="bread-score score-two"></div><div class="bread-score score-three"></div><div class="bread-score score-four"></div></div>
+          <span class="art-label art-label-top">STARCH<br />+ TIME</span>
+          <span class="art-label art-label-bottom">EST. 2026<br />FORMULA 001</span>
+        </div>
+        <div class="hero-formula">
+          <div><small>HYDRATION</small><strong>71.5<sup>%</sup></strong></div>
+          <div><small>TANGZHONG FLOUR</small><strong>15<sup>%</sup></strong></div>
+          <div><small>POOLISH FLOUR</small><strong>20<sup>%</sup></strong></div>
+        </div>
+      </section>
+
+      <div class="section-intro" id="workbench">
+        <div><span class="section-kicker">01 / THE WORKBENCH</span><h2>Build your dough.</h2></div>
+        <p>Choose the bake, set your yield, and let the baker’s math handle the rest.</p>
+      </div>
+
+      <section class="workspace" aria-label="Dough calculator">
+        <div class="config-panel">
+          <div class="panel-header"><span class="panel-index">A</span><div><h3>Your bake</h3><p>Make it yours.</p></div></div>
+          <div class="field-caption">WHAT ARE WE MAKING?</div>
+          <div class="mode-picker" role="group" aria-label="Recipe mode">
+            <button id="mode-bread" class="mode-card is-active" type="button" aria-pressed="true"><span class="mode-symbol" aria-hidden="true">◒</span><span><strong>Artisan bread</strong><small>Crackling crust · tender crumb</small></span></button>
+            <button id="mode-pizza" class="mode-card" type="button" aria-pressed="false"><span class="mode-symbol" aria-hidden="true">◉</span><span><strong>Pizza</strong><small>Airy dough · crispy bottom</small></span></button>
+          </div>
+          <div class="field-grid">
+            <div class="field"><label for="count" id="count-label">NUMBER OF LOAVES</label><div class="number-control"><button id="count-minus" type="button" aria-label="Decrease quantity">−</button><input id="count" type="number" min="1" max="40" step="1" value="1" inputmode="numeric" /><button id="count-plus" type="button" aria-label="Increase quantity">+</button></div></div>
+            <div class="field"><label for="piece-weight" id="weight-label">DOUGH / LOAF</label><div class="unit-input"><input id="piece-weight" type="number" min="100" max="2000" step="1" value="697" inputmode="numeric" /><span>g</span></div></div>
+          </div>
+          <div class="conditional" id="pizza-settings" hidden>
+            <div class="field-caption with-space">FERMENTATION ROUTE</div>
+            <div class="choice-group" role="group" aria-label="Fermentation route"><button id="route-same-day" class="pill is-selected" type="button" aria-pressed="true">Same-day</button><button id="route-overnight" class="pill" type="button" aria-pressed="false">Overnight · 12–24h</button></div>
+            <div class="field-caption with-space">PIZZA SHAPE</div>
+            <div class="choice-group" role="group" aria-label="Pizza shape"><button id="style-round" class="pill is-selected" type="button" aria-pressed="true">Round · stone / steel</button><button id="style-pan" class="pill" type="button" aria-pressed="false">Pan · oiled tray</button></div>
+          </div>
+          <div id="recipe-tip" class="advice" role="note"><span class="advice-icon">✳</span><p>The original 697 g loaf is reproduced exactly at <strong>1 loaf × 697 g</strong>.</p></div>
+          <button class="reset-link" id="reset-recipe" type="button">↺ Reset to original recipe</button>
+        </div>
+
+        <div class="recipe-panel">
+          <div class="panel-header recipe-head"><span class="panel-index">B</span><div><h3>The formula</h3><p>Live ingredient weights · baker's percentages</p></div><button class="icon-button" id="copy-recipe" type="button" title="Copy ingredients" aria-label="Copy ingredients">COPY ↗</button></div>
+          <div class="yield-strip"><div><span>YOUR YIELD</span><strong id="total-weight">697 g</strong></div><div><span>FLOUR</span><strong id="total-flour">400 g</strong></div><div><span>WATER</span><strong id="total-water">286 g</strong></div></div>
+          <div class="ingredient-section">
+            <div class="ingredient-head"><span class="group-index">01</span><h4>Tangzhong <small>heated flour paste</small></h4></div>
+            <div class="ingredient-row"><span>Bread flour</span><strong id="tz-flour"></strong><small>15%</small></div>
+            <div class="ingredient-row"><span>Boiling water</span><strong id="tz-water"></strong><small>30%</small></div>
+          </div>
+          <div class="ingredient-section">
+            <div class="ingredient-head"><span class="group-index">02</span><h4>Poolish <small>preferment</small></h4></div>
+            <div class="ingredient-row"><span>Bread flour</span><strong id="pool-flour"></strong><small>20%</small></div>
+            <div class="ingredient-row"><span>Water</span><strong id="pool-water"></strong><small>20%</small></div>
+            <div class="ingredient-row"><span>Instant yeast</span><strong id="pool-yeast"></strong><small>0.20%</small></div>
+          </div>
+          <div class="ingredient-section last-section">
+            <div class="ingredient-head"><span class="group-index">03</span><h4>Final dough <small>combine everything</small></h4></div>
+            <div class="ingredient-row"><span>Bread flour</span><strong id="final-flour"></strong><small>65%</small></div>
+            <div class="ingredient-row"><span>Ice-cold water</span><strong id="final-water"></strong><small>21.5%</small></div>
+            <div class="ingredient-row"><span>Instant yeast</span><strong id="final-yeast"></strong><small id="final-yeast-pct">0.80%</small></div>
+            <div class="ingredient-row"><span>Salt</span><strong id="final-salt"></strong><small>1.75%</small></div>
+            <div class="ingredient-row included"><span>All of the poolish + tangzhong</span><span>included above</span></div>
+          </div>
+          <div class="formula-footer"><span><i class="tiny-circle"></i> 71.5% actual hydration (rounded to 72% in the source recipe)</span><button type="button" id="print-recipe">PRINT RECIPE ↗</button></div>
+        </div>
+      </section>
+
+      <section class="method-section" aria-label="Step-by-step baking method">
+        <div class="section-intro section-intro-method"><div><span class="section-kicker">02 / THE METHOD</span><h2 id="method-title">From flour to loaf.</h2></div><p id="method-intro">A simple cold-bulk process. Track each stage as you go.</p></div>
+        <div class="method-grid">
+          <aside class="timer-panel">
+            <div class="timer-eyebrow">BENCH TIMER <span class="live-dot"></span></div>
+            <div class="timer-digits" id="timer-display" role="timer" aria-live="off">30:00</div>
+            <p class="timer-label" id="timer-label">First cold rest</p>
+            <div class="timer-controls"><button class="timer-primary" id="timer-start" type="button">START TIMER <span aria-hidden="true">▶</span></button><button class="timer-secondary" id="timer-reset" type="button" aria-label="Reset timer">↺</button></div>
+            <p id="timer-note" class="timer-note" role="status">Select a step's timer to change the duration.</p>
+            <div class="timer-divider"></div>
+            <div class="progress-top"><span>BAKE PROGRESS</span><span id="progress-count">0 / 11</span></div>
+            <div class="progress-track" role="progressbar" id="progress-bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Recipe progress"><div id="progress-fill"></div></div>
+            <p class="aside-note">Check steps off as you work. Progress is saved locally in this browser.</p>
+            <button id="clear-progress" class="clear-link" type="button">CLEAR CHECKMARKS ↗</button>
+          </aside>
+          <div class="steps" id="steps" aria-label="Recipe steps"></div>
+        </div>
+      </section>
+
+      <section class="science-note"><div class="science-icon">✳</div><div><span>BEHIND THE DOUGH</span><h3>Why tangzhong?</h3><p>Hot-water starch gelatinization holds on to extra moisture, contributing to a softer, longer-lasting crumb. Poolish adds aroma and flavour through prefermentation. Pizza mode adapts the shaping and bake to that same flour–water architecture.</p></div><div class="science-formula">15<span>%</span><small>FLOUR IN<br />TANGZHONG</small></div></section>
+    </main>
+    <footer class="footer"><span>TANGZHONG LAB © 2026</span><span>CRAFTED FROM A 400 G FLOUR FORMULA · <a href="https://github.com/fernando-parodi" target="_blank" rel="noopener noreferrer">@FERNANDO-PARODI ↗</a></span><span>RECIPE ENGINE / V1.0</span></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
