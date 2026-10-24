@@ -1,10 +1,23 @@
 # Tangzhong Lab
 
-**One dough. Two directions.** An interactive, browser-based calculator for artisan bread and pizza built around a Tangzhong–Poolish dough formula.
+[![Tangzhong Lab: one dough, two directions. A visual introduction to the bread and pizza calculator.](assets/tangzhong-showcase.svg)](https://fernando-parodi.github.io/tangzhong-lab/)
 
-**[Launch the web app](https://fernando-parodi.github.io/tangzhong-lab/)** · [Source code](https://github.com/fernando-parodi/tangzhong-lab)
+**One dough. Two directions.** An interactive, browser-based recipe calculator for artisan bread and pizza built around a Tangzhong–Poolish formula.
+
+### **[↗ Open the live application](https://fernando-parodi.github.io/tangzhong-lab/)**
+
+[**Use the dough calculator**](https://fernando-parodi.github.io/tangzhong-lab/#workbench) · [**Read the source code**](https://github.com/fernando-parodi/tangzhong-lab/tree/main) · [**View the formula tests**](tests/recipe.test.mjs)
 
 Tangzhong Lab combines precise ingredient scaling with guided preparation methods. It is a lightweight static application: no account, backend, build step, or third-party JavaScript framework is required.
+
+## Try it
+
+1. Choose **Artisan bread** or **Pizza**.
+2. Enter the number of loaves or pizza balls and the desired dough weight.
+3. Review the automatically scaled Tangzhong, Poolish, and final-dough ingredients.
+4. Follow the preparation method, use the timer, and print or copy the finished batch sheet.
+
+**Example:** Select *Pizza*, 4 balls at 250 g each. The calculator produces **1,000 g of total dough** with ingredient quantities adjusted to match. For the source bread formula, choose 1 loaf at 697 g.
 
 ## Features
 
